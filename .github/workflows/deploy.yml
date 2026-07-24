@@ -1,4 +1,17 @@
-name: Deploy site to GitHub Pages
+name: Build and publish site
+
+# Builds the site and publishes the static output to the `gh-pages` branch on
+# every push to main. This works with the default GITHUB_TOKEN (contents:write)
+# and needs no repository settings change.
+#
+# The published branch is immediately servable via a GitHub CDN, e.g.:
+#   https://raw.githack.com/<owner>/<repo>/gh-pages/index.html
+#   https://cdn.jsdelivr.net/gh/<owner>/<repo>@gh-pages/index.html
+#
+# To also serve it at the canonical github.io URL, enable GitHub Pages once:
+#   Settings → Pages → Build and deployment → Source: "Deploy from a branch"
+#   → Branch: gh-pages / (root).  Then it is live at
+#   https://<owner>.github.io/<repo>/
 
 on:
   push:
@@ -6,17 +19,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-# Allow one concurrent deployment.
 concurrency:
-  group: pages
+  group: publish-gh-pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,27 +44,20 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: SPA fallback (serve index.html on unknown paths / refresh)
-        run: cp dist/index.html dist/404.html
+      - name: Prepare static output
+        run: |
+          cp dist/index.html dist/404.html   # SPA / refresh fallback
+          touch dist/.nojekyll               # serve as-is (no Jekyll)
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          # Auto-enable GitHub Pages (build type = GitHub Actions) if not already on.
-          enablement: true
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish to gh-pages branch
+        run: |
+          cd dist
+          git init -q
+          git checkout -q -b gh-pages
+          git add -A
+          git -c user.email=github-actions@users.noreply.github.com \
+              -c user.name="github-actions[bot]" \
+              commit -qm "Deploy ${GITHUB_SHA}"
+          git push -f \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" \
+            gh-pages

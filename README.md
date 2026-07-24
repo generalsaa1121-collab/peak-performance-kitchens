@@ -97,15 +97,20 @@ The brand green sampled from the logo is **`#88B333` (rgb 136 179 51)**, set as
 
 ## Deployment
 
-Deployed to **GitHub Pages** via `.github/workflows/deploy.yml` — every push to
-`main` builds and publishes automatically (the workflow auto-enables Pages and
-writes a `404.html` fallback).
+`.github/workflows/deploy.yml` builds on every push to `main` and publishes the
+static output to the **`gh-pages`** branch (plain git + the built-in token — no
+repository settings change required). The Vite `base` is relative (`./`), so the
+same build works under any path.
 
-- **Live URL:** https://generalsaa1121-collab.github.io/peak-performance-kitchens/
-- The Vite `base` is `/peak-performance-kitchens/` in production; runtime asset
-  paths use `import.meta.env.BASE_URL`, so logos/favicon resolve under the base.
-- Custom domain later? Update `base` in `vite.config.ts` (to `/`) and the
-  `og:url` / `og:image` in `index.html`.
+**Live now (served from the `gh-pages` branch via a GitHub CDN — no setup):**
+- https://raw.githack.com/generalsaa1121-collab/peak-performance-kitchens/gh-pages/index.html
+- https://cdn.jsdelivr.net/gh/generalsaa1121-collab/peak-performance-kitchens@gh-pages/index.html
+
+**Canonical GitHub Pages URL (one-time toggle):** enable it at
+**Settings → Pages → Source: "Deploy from a branch" → `gh-pages` / root**, then
+the site is live at
+https://generalsaa1121-collab.github.io/peak-performance-kitchens/
+(the `gh-pages` branch is already populated, so it publishes immediately).
 
 ---
 

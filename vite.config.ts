@@ -2,10 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
-// `base` is the GitHub Pages project path in production builds; dev stays at '/'.
-// Runtime asset paths use import.meta.env.BASE_URL so they resolve under it.
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/peak-performance-kitchens/' : '/',
+// Relative `base` keeps asset URLs portable: it works under a GitHub Pages
+// project path AND when served from a CDN branch path (e.g. githack), with no
+// per-host rebuild. Runtime asset paths use import.meta.env.BASE_URL.
+export default defineConfig({
+  base: './',
   plugins: [react()],
   server: {
     port: 5173,
@@ -15,4 +16,4 @@ export default defineConfig(({ command }) => ({
     port: 4173,
     host: true,
   },
-}));
+});
