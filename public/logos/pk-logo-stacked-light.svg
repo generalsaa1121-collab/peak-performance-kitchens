@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER logo asset — stacked lockup, LIGHT (for dark backgrounds).
+  Used for: footer, mobile full-screen menu.
+  Uses textLength so the wordmark keeps a fixed width in any font (no clipping).
+  Replace with the official stacked (white) logo file before launch.
+-->
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peak Performance Kitchens">
+  <g transform="translate(71.6,6) scale(1.2)">
+    <path d="M4 45 L24 13 L34 27.5 L45 7 L60 45 Z" fill="#F6F7F5"/>
+    <path d="M45 7 L39.6 17 L50.4 17 Z" fill="#A3E635"/>
+    <path d="M24 13 L19 21 L29 21 Z" fill="#A3E635"/>
+  </g>
+  <text x="110" y="104" text-anchor="middle" textLength="184" lengthAdjust="spacingAndGlyphs" font-family="'Sora','Inter',system-ui,-apple-system,sans-serif" font-size="19" font-weight="800" fill="#F6F7F5">PEAK PERFORMANCE</text>
+  <text x="110" y="126" text-anchor="middle" textLength="132" lengthAdjust="spacingAndGlyphs" font-family="'Sora','Inter',system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#A3E635">KITCHENS</text>
+</svg>

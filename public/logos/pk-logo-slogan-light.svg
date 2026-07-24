@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER logo asset — wordmark + slogan lockup, LIGHT (for dark backgrounds).
+  Used for: wide branded slogan band where the slogan must remain readable.
+  Uses textLength so the wordmark + slogan keep fixed widths in any font.
+  Replace with the official full slogan logo file before launch.
+-->
+<svg width="540" height="96" viewBox="0 0 540 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peak Performance Kitchens — Healthy Ingredients + Real Results + Better You">
+  <g transform="translate(6,14) scale(1.05)">
+    <path d="M4 45 L24 13 L34 27.5 L45 7 L60 45 Z" fill="#F6F7F5"/>
+    <path d="M45 7 L39.6 17 L50.4 17 Z" fill="#A3E635"/>
+    <path d="M24 13 L19 21 L29 21 Z" fill="#A3E635"/>
+  </g>
+  <text x="82" y="40" textLength="430" lengthAdjust="spacingAndGlyphs" font-family="'Sora','Inter',system-ui,-apple-system,sans-serif" font-size="26" font-weight="800" fill="#F6F7F5">PEAK PERFORMANCE KITCHENS</text>
+  <text x="83" y="66" textLength="428" lengthAdjust="spacingAndGlyphs" font-family="'Sora','Inter',system-ui,-apple-system,sans-serif" font-size="12.5" font-weight="600" fill="#A3E635">HEALTHY INGREDIENTS  +  REAL RESULTS  +  BETTER YOU</text>
+</svg>

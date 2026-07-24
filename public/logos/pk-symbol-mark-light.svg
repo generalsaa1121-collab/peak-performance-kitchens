@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER logo asset — mountain mark, LIGHT fill on transparent background.
+  For decorative watermarks / loading state on dark surfaces (an <img> cannot
+  inherit currentColor, so this variant is pre-filled light). Replace with the
+  official symbol (white) before launch.
+-->
+<svg width="64" height="52" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peak Performance Kitchens symbol">
+  <path d="M4 45 L24 13 L34 27.5 L45 7 L60 45 Z" fill="#F6F7F5"/>
+  <path d="M45 7 L39.6 17 L50.4 17 Z" fill="#A3E635"/>
+  <path d="M24 13 L19 21 L29 21 Z" fill="#A3E635"/>
+</svg>

@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   BRAND DESIGN TOKENS
+   ----------------------------------------------------------------------------
+   The performance accent green lives here as a single source of truth.
+   To match the exact green sampled from the official Peak Performance Kitchens
+   logo, change --pk-green below (space-separated R G B channels). Everything
+   else — buttons, active nav, macro bars, dividers, focus rings — updates.
+   ========================================================================== */
+:root {
+  /* PLACEHOLDER performance green. Replace channels with the exact logo green. */
+  --pk-green: 163 230 53; /* #A3E635 */
+  --pk-green-soft: 217 245 160; /* #D9F5A0 — soft fill on light surfaces */
+  --pk-green-ink: 63 98 18; /* #3F6212 — accessible green text on light bg (AA) */
+
+  --pk-bg: 11 11 12; /* page background ink */
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky header never covers section titles. */
+    scroll-padding-top: 96px;
+    /* Safety net: never allow horizontal page scroll. `clip` (not `hidden`)
+       preserves vertical scrolling and position: sticky. */
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-ink-900 font-sans text-cloud antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* Accessible, on-brand focus treatment. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--pk-green));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgb(var(--pk-green));
+    color: #0b0b0c;
+  }
+}
+
+@layer components {
+  /* Horizontal rhythm container used by every section. */
+  .u-container {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Small uppercase brand eyebrow/kicker. */
+  .u-kicker {
+    @apply inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-peak text-green;
+  }
+
+  /* Hairline divider that reads as a subtle contour line. */
+  .u-hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/12 to-transparent;
+  }
+}
+
+@layer utilities {
+  .u-no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .u-no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Masked fade edges for horizontal scrollers / marquees. */
+  .u-edge-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+  }
+
+  .u-text-gradient {
+    background: linear-gradient(180deg, #ffffff 0%, #c7c9ce 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* ============================================================================
+   REDUCED-MOTION SAFETY NET
+   Framer Motion components use the useReducedMotion hook individually; this is
+   the global backstop for CSS-driven motion (marquees, smooth scroll, shimmer).
+   Content and functionality are fully preserved — only movement is removed.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

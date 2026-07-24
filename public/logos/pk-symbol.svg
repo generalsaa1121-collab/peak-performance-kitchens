@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER logo asset — Peak Performance Kitchens mountain symbol (badge form).
+  Used for: favicon, loading state, compact placements.
+  Replace with the official "mountain-only symbol" logo file before launch.
+-->
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peak Performance Kitchens symbol">
+  <rect width="64" height="64" rx="15" fill="#0B0B0C"/>
+  <path d="M8 49 L26 20 L35 33 L45 15 L57 49 Z" fill="#F6F7F5"/>
+  <path d="M45 15 L40.4 23.6 L49.6 23.6 Z" fill="#A3E635"/>
+  <path d="M26 20 L21.7 26.8 L30.3 26.8 Z" fill="#A3E635"/>
+  <rect x="8" y="49" width="49" height="3.2" rx="1.6" fill="#A3E635"/>
+</svg>

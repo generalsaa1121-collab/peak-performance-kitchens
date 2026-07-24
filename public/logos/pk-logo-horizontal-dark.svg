@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PLACEHOLDER logo asset — horizontal lockup, DARK (for light backgrounds).
+  Used for: any light/paper section that shows the horizontal logo.
+  Uses textLength so the wordmark keeps a fixed width in any font (no clipping).
+  Replace with the official horizontal (dark) logo file before launch.
+-->
+<svg width="292" height="64" viewBox="0 0 292 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peak Performance Kitchens">
+  <g transform="translate(0,9) scale(0.86)">
+    <path d="M4 45 L24 13 L34 27.5 L45 7 L60 45 Z" fill="#141416"/>
+    <path d="M45 7 L39.6 17 L50.4 17 Z" fill="#4D7C0F"/>
+    <path d="M24 13 L19 21 L29 21 Z" fill="#4D7C0F"/>
+  </g>
+  <text x="68" y="31" textLength="212" lengthAdjust="spacingAndGlyphs" font-family="'Sora','Inter',system-ui,-apple-system,sans-serif" font-size="20" font-weight="800" fill="#141416">PEAK PERFORMANCE</text>
+  <text x="69" y="50" textLength="150" lengthAdjust="spacingAndGlyphs" font-family="'Sora','Inter',system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#4D7C0F">KITCHENS</text>
+</svg>
