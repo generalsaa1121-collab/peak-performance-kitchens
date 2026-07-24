@@ -5,7 +5,7 @@
  */
 
 import type { ImageAsset } from '../types';
-import { stock } from './stock';
+import { sectionImages } from './images';
 
 /**
  * Base-aware path helper. In production the site is served under a base path
@@ -67,41 +67,38 @@ export type LogoKey = keyof typeof logos;
 /*  IMAGE REGISTRY (non-meal imagery)                                          */
 /* -------------------------------------------------------------------------- */
 /**
- * Meal photos live with their meal in src/data/meals.ts. This registry holds
- * the remaining editorial images. Every entry is a single ImageAsset — set
- * `src` to a real URL or /images path to replace the branded placeholder.
- *
- * NOTE: This build environment's network policy blocked stock-photo CDNs, so no
- * external photography could be embedded. Each slot renders an on-brand
- * placeholder tile until you drop in real images (see public/images/README.md).
+ * Editorial (non-meal) imagery. Each `src` points at ONE fixed, local file in
+ * /public/images via the centralized registry in src/config/images.ts — there
+ * are no remote, random, or query-based image URLs anywhere. To swap an image,
+ * change the path in src/config/images.ts (single source of truth).
  */
 export const images: Record<string, ImageAsset> = {
   hero: {
-    src: stock.hero, // SWAP: hero meal-prep hero shot (wide, premium, protein-forward).
+    src: sectionImages.hero.src, // SWAP: hero meal-prep hero shot (wide, premium, protein-forward).
     alt: 'A freshly prepared Peak Performance Kitchens meal with grilled protein, grains and roasted vegetables.',
     credit: 'Placeholder — replace with licensed hero photography.',
     tone: 'signature',
   },
   heroSecondary: {
-    src: stock.heroSecondary, // SWAP: secondary hero container / meal-prep lineup for the layered composition.
+    src: sectionImages.heroSecondary.src, // SWAP: secondary hero container / meal-prep lineup for the layered composition.
     alt: 'A row of portioned meal-prep containers ready for the week.',
     credit: 'Placeholder — replace with licensed meal-prep photography.',
     tone: 'grain',
   },
   brandStory: {
-    src: stock.brandStory, // SWAP: kitchen / chef-at-work editorial image for the About section.
+    src: sectionImages.brandStory.src, // SWAP: kitchen / chef-at-work editorial image for the About section.
     alt: 'Chef plating balanced, portioned meals in a professional kitchen.',
     credit: 'Placeholder — replace with real kitchen/brand photography.',
     tone: 'beef',
   },
   nutrition: {
-    src: stock.nutrition, // SWAP: clean overhead of a balanced plate for the nutrition section.
+    src: sectionImages.nutrition.src, // SWAP: clean overhead of a balanced plate for the nutrition section.
     alt: 'Overhead view of a balanced plate: lean protein, complex carbs and vegetables.',
     credit: 'Placeholder — replace with licensed nutrition photography.',
     tone: 'salmon',
   },
   planBand: {
-    src: stock.planBand, // SWAP: atmospheric food-prep image behind the meal-plan callout.
+    src: sectionImages.planBand.src, // SWAP: atmospheric food-prep image behind the meal-plan callout.
     alt: 'Weekly meal prep laid out across a kitchen counter.',
     credit: 'Placeholder — replace with licensed photography.',
     tone: 'chicken',

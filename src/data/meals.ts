@@ -13,7 +13,7 @@
  */
 
 import type { Meal } from '../types';
-import { stock } from '../config/stock';
+import { mealImages } from '../config/images';
 
 export const meals: Meal[] = [
   {
@@ -30,7 +30,7 @@ export const meals: Meal[] = [
     ingredients: ['Chicken breast', 'Jasmine rice', 'Broccoli', 'Garlic', 'Fresh herbs', 'Olive oil'],
     allergens: ['Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['herb-grilled-chicken'],
+      src: mealImages['herb-grilled-chicken'].src,
       alt: 'Herb-grilled chicken breast with jasmine rice and charred broccoli.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'chicken',
@@ -50,7 +50,7 @@ export const meals: Meal[] = [
     ingredients: ['Sirloin steak', 'Parsley', 'Garlic', 'Cauliflower', 'Asparagus', 'Red wine vinegar'],
     allergens: ['Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['chimichurri-steak'],
+      src: mealImages['chimichurri-steak'].src,
       alt: 'Sliced chimichurri steak with cauliflower mash and asparagus.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'beef',
@@ -70,7 +70,7 @@ export const meals: Meal[] = [
     ingredients: ['Atlantic salmon', 'Quinoa', 'Asparagus', 'Lemon', 'Garlic', 'Dill'],
     allergens: ['Contains fish', 'Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['lemon-garlic-salmon'],
+      src: mealImages['lemon-garlic-salmon'].src,
       alt: 'Roasted salmon fillet with herbed quinoa and asparagus.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'salmon',
@@ -89,7 +89,7 @@ export const meals: Meal[] = [
     ingredients: ['Ground turkey', 'Rigatoni', 'Tomatoes', 'Onion', 'Garlic', 'Basil'],
     allergens: ['Contains wheat', 'Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['turkey-bolognese'],
+      src: mealImages['turkey-bolognese'].src,
       alt: 'Turkey bolognese with rigatoni and fresh basil.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'turkey',
@@ -108,7 +108,7 @@ export const meals: Meal[] = [
     ingredients: ['Protein penne', 'Edamame', 'Ricotta', 'Tomato', 'Basil', 'Parmesan'],
     allergens: ['Contains wheat', 'Contains milk', 'Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['high-protein-pasta'],
+      src: mealImages['high-protein-pasta'].src,
       alt: 'High-protein penne pasta with edamame and roasted tomato.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'pasta',
@@ -128,7 +128,7 @@ export const meals: Meal[] = [
     ingredients: ['Chicken thigh', 'Brown rice', 'Black beans', 'Corn', 'Bell pepper', 'Lime'],
     allergens: ['Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['southwest-chicken-bowl'],
+      src: mealImages['southwest-chicken-bowl'].src,
       alt: 'Southwest chicken bowl with brown rice, black beans, corn and peppers.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'chicken',
@@ -148,7 +148,7 @@ export const meals: Meal[] = [
     ingredients: ['Eggs', 'Sweet potato', 'Spinach', 'Avocado', 'Onion', 'Paprika'],
     allergens: ['Contains egg', 'Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['protein-breakfast-bowl'],
+      src: mealImages['protein-breakfast-bowl'].src,
       alt: 'Protein breakfast bowl with scrambled eggs, sweet-potato hash and avocado.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'breakfast',
@@ -167,7 +167,7 @@ export const meals: Meal[] = [
     ingredients: ['Farro', 'Chickpeas', 'Sweet potato', 'Brussels sprouts', 'Tahini', 'Lemon'],
     allergens: ['Contains sesame', 'Contains wheat', 'Allergen info is sample data — confirm per recipe'],
     image: {
-      src: stock['roasted-vegetable-grain-bowl'],
+      src: mealImages['roasted-vegetable-grain-bowl'].src,
       alt: 'Roasted vegetable grain bowl with farro, chickpeas and tahini drizzle.',
       credit: 'Placeholder — replace with licensed food photography.',
       tone: 'veg',

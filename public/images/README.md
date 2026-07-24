@@ -1,32 +1,49 @@
 # Food & editorial imagery
 
-This folder is where **real photography** goes when you're ready to replace the
-built-in placeholder tiles.
+Every image on the site is **one fixed, local file in this folder**. There are
+no remote, random, keyword, or query-based image URLs anywhere in the project —
+so an image can never change on refresh and a CDN can never serve the wrong
+picture. All paths are centralized in **`src/config/images.ts`** (the single
+source of truth).
 
-## Why placeholders?
+## Folder layout
 
-This mockup was built in an environment whose network policy blocked stock-photo
-CDNs, so no external photos could be embedded. Every image slot therefore renders
-an on-brand **placeholder tile** (an abstract "top-down plate" graded by food
-type) instead of a broken image. The placeholders are intentional and swappable —
-not final art.
+```
+images/
+  meals/       one file per meal, composed to match the dish
+  hero/        hero signature plate
+  lifestyle/   meal-prep containers / weekly prep counter
+  about/       kitchen prep scene
+  nutrition/   balanced-plate diagram
+```
 
-## How to add real photos
+## What's here now (temporary stock art)
 
-1. Drop optimized images here, e.g. `herb-grilled-chicken.jpg` (aim for ~1200px
-   wide, compressed).
-2. Point the matching image slot at it:
-   - **Meals** — set `image.src` in `src/data/meals.ts`
-     (e.g. `src: '/images/herb-grilled-chicken.jpg'`).
-   - **Editorial** (hero, about, nutrition, slogan band) — set `src` in
-     `src/config/assets.ts` → `images`.
-3. That's it. The `ResponsiveImage` component shows the photo when `src` is set
-   and falls back to the placeholder (and on load error) otherwise.
+These are **brand-authored meal illustrations** (SVG) used as fixed
+placeholders. They exist because this build environment's network policy blocks
+every stock-photo host (Unsplash, Pexels, Wikimedia, Picsum, etc.), so licensed
+photography could not be downloaded here. Each illustration is composed to
+visibly match its dish (the salmon shows salmon, the steak shows steak) and all
+share one consistent editorial style — they are intentional placeholders, not
+final art.
 
-You can also use remote URLs instead of local files (e.g. an Unsplash or CDN
-URL) — anywhere a `src` is accepted.
+## How to swap in real photography (one edit per image)
 
-Recommended subjects: grilled chicken, steak, salmon, turkey, rice/potatoes,
-roasted vegetables, breakfast bowls, healthy pasta, and meal-prep containers.
-Favor fresh, realistic, protein-forward dishes; avoid heavily filtered or
-plastic-looking food.
+1. Drop an optimized photo into the matching subfolder, e.g.
+   `meals/meal-lemon-garlic-salmon.jpg` (~1200px wide, WebP or compressed JPEG).
+2. Open **`src/config/images.ts`** and change that image's `src` to the new
+   file, e.g. `src: img('images/meals/meal-lemon-garlic-salmon.jpg')`.
+3. Done. Nothing else references image paths — `meals.ts`, `assets.ts` and every
+   component read through this registry.
+
+`ResponsiveImage` renders an on-brand tile underneath while the file decodes and
+if a file is ever missing, so the layout never breaks.
+
+### Photography direction (when sourcing real photos)
+
+Grilled chicken with rice + vegetables, steak with grains, salmon with veg,
+turkey dishes, high-protein pasta, power/burrito bowls, breakfast bowls,
+plant-based grain bowls. Favor realistic portions, natural textures, clean
+plating/containers, consistent lighting and sharp focus. Avoid fast food,
+greasy or plastic-looking food, raw ingredients presented as finished meals,
+embedded text/watermarks, and anything unrelated to the dish.
