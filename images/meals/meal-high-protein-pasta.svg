@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img">
+  <defs>
+    <radialGradient id="bga4" cx="34%" cy="24%" r="95%">
+      <stop offset="0%" stop-color="#202226"/>
+      <stop offset="100%" stop-color="#0d0e10"/>
+    </radialGradient>
+    <radialGradient id="keya4" cx="32%" cy="22%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="viga4" cx="50%" cy="52%" r="72%">
+      <stop offset="62%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.42"/>
+    </radialGradient>
+    <filter id="softa4" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="texa4" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.06"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#bga4)"/>
+  <g stroke="#ffffff" stroke-opacity="0.045" fill="none" stroke-width="1.4">
+    <path d="M-20.0 245.99999999999997 L112.00000000000001 150.0 L184.0 186.0 L264.0 108.0 L420.0 216.0"/>
+    <path d="M-20.0 276.0 L112.00000000000001 180.0 L184.0 216.0 L264.0 138.0 L420.0 245.99999999999997"/>
+    <path d="M-20.0 306.0 L112.00000000000001 210.0 L184.0 245.99999999999997 L264.0 168.00000000000003 L420.0 276.0"/>
+  </g>
+  <rect width="400" height="300" fill="url(#keya4)"/>
+  <ellipse cx="200" cy="168.56" rx="96.60000000000001" ry="79.12" fill="#000000" opacity="0.36" filter="url(#softa4)"/>
+  <circle cx="200" cy="152" r="92" fill="#e7e1d4"/>
+  <circle cx="200" cy="152" r="82.8" fill="#efe9dd"/>
+  <path d="M 142.96 106.0 A 73.60000000000001 73.60000000000001 0 0 1 216.56 83.92" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="3" stroke-linecap="round"/><circle cx="200" cy="152" r="75.44" fill="#c0472f"/><circle cx="200" cy="152" r="75.44" fill="#9c341f" opacity="0.3"/><g transform="rotate(162 219 179)"><rect x="207" y="172" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 207 172 l 6 -3 M 231 186 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(121 191 189)"><rect x="179" y="182" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 179 182 l 6 -3 M 203 196 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(129 210 130)"><rect x="198" y="123" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 198 123 l 6 -3 M 222 137 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(3 157 146)"><rect x="145" y="139" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 145 139 l 6 -3 M 169 153 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(17 178 171)"><rect x="166" y="164" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 166 164 l 6 -3 M 190 178 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(59 225 179)"><rect x="213" y="172" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 213 172 l 6 -3 M 237 186 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(104 192 133)"><rect x="180" y="126" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 180 126 l 6 -3 M 204 140 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(84 199 151)"><rect x="187" y="144" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 187 144 l 6 -3 M 211 158 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(166 163 144)"><rect x="151" y="137" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 151 137 l 6 -3 M 175 151 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(39 219 147)"><rect x="207" y="140" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 207 140 l 6 -3 M 231 154 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(5 200 148)"><rect x="188" y="141" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 188 141 l 6 -3 M 212 155 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(87 171 159)"><rect x="159" y="152" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 159 152 l 6 -3 M 183 166 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(170 193 156)"><rect x="181" y="149" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 181 149 l 6 -3 M 205 163 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(60 247 161)"><rect x="235" y="154" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 235 154 l 6 -3 M 259 168 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><g transform="rotate(172 210 156)"><rect x="198" y="149" width="24" height="14" rx="7" fill="#e6c069"/><path d="M 198 149 l 6 -3 M 222 163 l -6 3" stroke="#c79f45" stroke-width="1.5"/></g><ellipse cx="176" cy="138" rx="12" ry="9" fill="#f2ede0"/><ellipse cx="172" cy="135" rx="5" ry="3.5" fill="#ffffff" opacity="0.7"/><ellipse cx="220" cy="132" rx="12" ry="9" fill="#f2ede0"/><ellipse cx="216" cy="129" rx="5" ry="3.5" fill="#ffffff" opacity="0.7"/><ellipse cx="210" cy="172" rx="12" ry="9" fill="#f2ede0"/><ellipse cx="206" cy="169" rx="5" ry="3.5" fill="#ffffff" opacity="0.7"/><ellipse cx="186" cy="170" rx="8" ry="5" fill="#7ba83e" transform="rotate(20 186 170)"/><ellipse cx="230" cy="158" rx="8" ry="5" fill="#7ba83e" transform="rotate(20 230 158)"/><ellipse cx="170" cy="150" rx="8" ry="5" fill="#7ba83e" transform="rotate(20 170 150)"/><ellipse cx="206" cy="128" rx="8" ry="5" fill="#7ba83e" transform="rotate(20 206 128)"/><g transform="translate(258 202) scale(0.95)" opacity="0.95"><path d="M0 0 C 6 -10 4 -20 0 -26" stroke="#88b333" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="-4" cy="-8" rx="4" ry="2.4" fill="#88b333" transform="rotate(-30 -4 -8)"/><ellipse cx="4" cy="-14" rx="4" ry="2.4" fill="#6f9e2e" transform="rotate(30 4 -14)"/><ellipse cx="-3" cy="-20" rx="3.4" ry="2" fill="#88b333" transform="rotate(-24 -3 -20)"/></g>
+  <rect width="400" height="300" fill="url(#viga4)"/></svg>
