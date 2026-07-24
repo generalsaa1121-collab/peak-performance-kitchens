@@ -74,27 +74,46 @@ the official logo and drop it in — one line.
 
 ## Logo asset map
 
-Placeholder logos live in `public/logos/` and are referenced **only** through
-`src/config/assets.ts`. Replace the files (or repoint the paths) to use the
-official artwork — no component edits required.
+The **official** logo kit lives in `public/logos/` (files `01`–`10`, web-optimized)
+and is referenced **only** through `src/config/assets.ts`. On the dark site,
+transparent light-artwork files are used; the black-fill color badges (`01`,`04`)
+and app icon (`03`) are kept for pure-black / favicon use.
 
-| Placement | Slot (`assets.ts`) | Official variation to use |
+| Placement | Slot (`assets.ts`) | Official file used |
 | --- | --- | --- |
-| Desktop nav (dark header) | `logos.navDesktop` | Horizontal logo, **white** |
-| Light backgrounds | `logos.navDesktopLight` | Horizontal logo, **dark** |
-| Footer + mobile menu | `logos.stacked` | Stacked logo, white |
-| Wide slogan band (desktop) | `logos.sloganBand` | Full slogan lockup, white |
-| Favicon + compact | `logos.symbol` | Mountain symbol (badge) |
-| Watermarks / loading | `logos.symbolMarkLight` | Mountain symbol (white, transparent) |
-| Brand badge (hero) | `logos.badge` | Circular logo |
+| Desktop nav + mobile menu | `logos.navDesktop` | `02` horizontal, white |
+| Footer badge | `logos.monoWhite` | `07` monochrome white badge |
+| Slogan band — desktop | `logos.sloganBand` | `09` horizontal + tagline |
+| Slogan band — mobile | `logos.stacked` | `08` vertical + tagline |
+| Hero badge + watermarks + loader | `logos.symbolMark(Light)` | `10` mountain-in-circle |
+| Favicon / app icon | `logos.symbol` | `03` mountain icon badge |
+| Dark logo for light bg | `logos.navDesktopLight` | `06` monochrome black |
+| Color medallions (pure-black use) | `logos.badge` / `badgeTagline` | `04` / `01` |
+
+The brand green sampled from the logo is **`#88B333` (rgb 136 179 51)**, set as
+`--pk-green` in `src/index.css`.
+
+---
+
+## Deployment
+
+Deployed to **GitHub Pages** via `.github/workflows/deploy.yml` — every push to
+`main` builds and publishes automatically (the workflow auto-enables Pages and
+writes a `404.html` fallback).
+
+- **Live URL:** https://generalsaa1121-collab.github.io/peak-performance-kitchens/
+- The Vite `base` is `/peak-performance-kitchens/` in production; runtime asset
+  paths use `import.meta.env.BASE_URL`, so logos/favicon resolve under the base.
+- Custom domain later? Update `base` in `vite.config.ts` (to `/`) and the
+  `og:url` / `og:image` in `index.html`.
 
 ---
 
 ## Pre-launch checklist (replace before going live)
 
 **Logos & brand**
-- [ ] Drop the 10 official logo files into `public/logos/` (or repoint `assets.ts`)
-- [ ] Set the exact `--pk-green` sampled from the logo in `src/index.css`
+- [x] Official logo kit integrated in `public/logos/` (mapped in `assets.ts`)
+- [x] Exact `--pk-green` (#88B333) set in `src/index.css`
 
 **Business details** (`src/config/brand.ts`)
 - [ ] `contact.email`, `contact.phone` / `phoneHref`
