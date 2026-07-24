@@ -10,6 +10,9 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 // SINGLEFILE=1 produces a single self-contained index.html (inlined JS/CSS) for
 // publishing as a standalone artifact; logos are inlined as data URIs by a
 // pre-build step so nothing loads from disk.
+// Minimal ambient typing for the Node build-time global, so tsc passes without
+// pulling in @types/node (tsconfig.node.json restricts `types` to vite/client).
+declare const process: { env: Record<string, string | undefined> };
 const singleFile = process.env.SINGLEFILE === '1';
 
 export default defineConfig({

@@ -5,6 +5,7 @@
  */
 
 import type { ImageAsset } from '../types';
+import { stock } from './stock';
 
 /**
  * Base-aware path helper. In production the site is served under a base path
@@ -76,31 +77,31 @@ export type LogoKey = keyof typeof logos;
  */
 export const images: Record<string, ImageAsset> = {
   hero: {
-    src: null, // SWAP: hero meal-prep hero shot (wide, premium, protein-forward).
+    src: stock.hero, // SWAP: hero meal-prep hero shot (wide, premium, protein-forward).
     alt: 'A freshly prepared Peak Performance Kitchens meal with grilled protein, grains and roasted vegetables.',
     credit: 'Placeholder — replace with licensed hero photography.',
     tone: 'signature',
   },
   heroSecondary: {
-    src: null, // SWAP: secondary hero container / meal-prep lineup for the layered composition.
+    src: stock.heroSecondary, // SWAP: secondary hero container / meal-prep lineup for the layered composition.
     alt: 'A row of portioned meal-prep containers ready for the week.',
     credit: 'Placeholder — replace with licensed meal-prep photography.',
     tone: 'grain',
   },
   brandStory: {
-    src: null, // SWAP: kitchen / chef-at-work editorial image for the About section.
+    src: stock.brandStory, // SWAP: kitchen / chef-at-work editorial image for the About section.
     alt: 'Chef plating balanced, portioned meals in a professional kitchen.',
     credit: 'Placeholder — replace with real kitchen/brand photography.',
     tone: 'beef',
   },
   nutrition: {
-    src: null, // SWAP: clean overhead of a balanced plate for the nutrition section.
+    src: stock.nutrition, // SWAP: clean overhead of a balanced plate for the nutrition section.
     alt: 'Overhead view of a balanced plate: lean protein, complex carbs and vegetables.',
     credit: 'Placeholder — replace with licensed nutrition photography.',
     tone: 'salmon',
   },
   planBand: {
-    src: null, // SWAP: atmospheric food-prep image behind the meal-plan callout.
+    src: stock.planBand, // SWAP: atmospheric food-prep image behind the meal-plan callout.
     alt: 'Weekly meal prep laid out across a kitchen counter.',
     credit: 'Placeholder — replace with licensed photography.',
     tone: 'chicken',

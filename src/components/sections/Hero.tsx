@@ -29,9 +29,12 @@ function HeadlineLine({ text, highlight }: { text: string; highlight: string }) 
   );
 }
 
-export function Hero() {
+export function Hero({ ready = true }: { ready?: boolean }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
+  // Entrance plays only once the preloader has lifted, so the reveal is seen
+  // rather than completing behind the overlay. Reduced motion shows it instantly.
+  const start = reduce || ready;
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -50,7 +53,11 @@ export function Hero() {
     >
       {/* Background layers */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-green/10 blur-[120px]" />
+        <motion.div
+          className="absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-green/10 blur-[120px]"
+          animate={reduce ? undefined : { opacity: [0.65, 1, 0.65], scale: [1, 1.08, 1] }}
+          transition={reduce ? undefined : { repeat: Infinity, duration: 9, ease: 'easeInOut' }}
+        />
         <div className="absolute bottom-0 left-1/2 h-72 w-[120%] -translate-x-1/2 bg-gradient-to-t from-ink-900 to-transparent" />
         {/* Topographic contour lines */}
         <svg className="absolute inset-0 h-full w-full opacity-[0.06]" preserveAspectRatio="none" viewBox="0 0 1440 900" fill="none">
@@ -74,7 +81,7 @@ export function Hero() {
           className="lg:col-span-6 xl:col-span-6"
           variants={container}
           initial={reduce ? 'visible' : 'hidden'}
-          animate="visible"
+          animate={start ? 'visible' : 'hidden'}
         >
           <motion.span variants={fadeUp} className="u-kicker">
             <Icon name="mountain" className="h-4 w-4" strokeWidth={2} />
@@ -130,8 +137,8 @@ export function Hero() {
             <motion.div
               style={{ y: yMain }}
               initial={reduce ? { opacity: 1 } : { opacity: 0, clipPath: 'inset(0 0 100% 0)', scale: 1.06 }}
-              animate={{ opacity: 1, clipPath: 'inset(0 0 0% 0)', scale: 1 }}
-              transition={{ duration: 1, ease: EASE, delay: reduce ? 0 : 0.35 }}
+              animate={start ? { opacity: 1, clipPath: 'inset(0 0 0% 0)', scale: 1 } : undefined}
+              transition={{ duration: 1, ease: EASE, delay: reduce ? 0 : 0.2 }}
               className="relative"
             >
               <ResponsiveImage
@@ -147,9 +154,9 @@ export function Hero() {
             {/* Floating macro card */}
             <motion.div
               style={{ y: yFloat }}
-              initial={reduce ? { opacity: 1 } : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, ease: EASE, delay: reduce ? 0 : 0.9 }}
+              initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+              animate={start ? { opacity: 1 } : undefined}
+              transition={{ duration: 0.7, ease: EASE, delay: reduce ? 0 : 0.75 }}
               className="absolute -bottom-6 -left-4 w-52 rounded-card border border-white/10 bg-ink-800/85 p-4 shadow-lift backdrop-blur-md sm:-left-8"
             >
               <div className="flex items-center justify-between">
@@ -173,8 +180,8 @@ export function Hero() {
               aria-hidden="true"
               style={{ y: yBadge }}
               initial={reduce ? { opacity: 1 } : { opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, ease: EASE, delay: reduce ? 0 : 1 }}
+              animate={start ? { opacity: 1, scale: 1 } : undefined}
+              transition={{ duration: 0.7, ease: EASE, delay: reduce ? 0 : 0.9 }}
               className="absolute -right-5 -top-5 h-20 w-20 sm:h-24 sm:w-24"
             />
           </div>

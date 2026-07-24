@@ -36,7 +36,7 @@ export function Header({ menuOpen, activeId, onOpenMenu }: HeaderProps) {
           aria-label={`${brand.name} — home`}
           className="flex shrink-0 items-center rounded"
         >
-          <Logo variant="navDesktop" className="h-7 w-auto sm:h-8 lg:h-9" />
+          <Logo variant="navDesktop" className="h-9 w-auto sm:h-10 lg:h-11" />
         </a>
 
         {/* Desktop nav */}

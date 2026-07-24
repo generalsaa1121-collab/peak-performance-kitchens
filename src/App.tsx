@@ -7,6 +7,7 @@ import { scrollToAnchor } from './lib/utils';
 import { PlanProvider } from './context/PlanContext';
 
 import { Preloader } from './components/layout/Preloader';
+import { ScrollProgress } from './components/layout/ScrollProgress';
 import { Header } from './components/layout/Header';
 import { MobileMenu } from './components/layout/MobileMenu';
 import { Footer } from './components/layout/Footer';
@@ -59,6 +60,7 @@ export default function App() {
 
       <AnimatePresence>{loading && <Preloader key="preloader" />}</AnimatePresence>
 
+      <ScrollProgress />
       <Header menuOpen={menuOpen} activeId={activeId} onOpenMenu={() => setMenuOpen(true)} />
 
       <AnimatePresence
@@ -80,7 +82,7 @@ export default function App() {
       </AnimatePresence>
 
       <main id="main">
-        <Hero />
+        <Hero ready={!loading} />
         <BenefitStrip />
         <FeaturedMeals />
         <WeeklyMenu />
